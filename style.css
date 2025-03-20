@@ -189,27 +189,42 @@ box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
 }
 
 /*excute*/
-
 .campus{
     width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 100px;
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between images */
+    justify-content: space-between;
+}
 
-.campus-col{
-    flex-basis: 32%;
-    border-radius: 10px;
+.campus-col, .facilities-col {
+    flex-basis: 23%; /* Ensures exactly 4 in a row with gap */
+    border-radius: 6px; /* 6px border radius */
     margin-bottom: 30px;
     position: relative;
-    overflow: hidden;;    
+    overflow: hidden;
+}
+.campus-col img, .facilities-col img {
+    width: 100%;      /* Ensures all images stretch to fill their container */
+    height: 100%;     /* Fixed height for uniform size */
+    object-fit: cover; /* Crops and scales images to maintain aspect ratio */
+    border-radius: 6px; /* Maintains the desired rounded corners */
+}
 
+
+@media(max-width: 700px) {
+    .campus-col, .facilities-col {
+        flex-basis: 100%; /* Single image per row on smaller screens */
+    }
 }
-.campus-col img{
-    width: 100%;
-    display: block;
-}
-.layer{
+
+/* Animation for role display */
+.layer {
     background: transparent;
     height: 100%;
     width: 100%;
@@ -217,16 +232,15 @@ box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
     top: 0;
     left: 0;
 }
-.layer:hover{
 
-    background:rgba(57, 63, 182, 0.2);
+.layer:hover {
+    background: rgba(57, 63, 182, 0.3); /* Slightly adjusted for visibility */
 }
 
-.layer h3
-{
-    width:100%;
-    font-weight:500;
-    color: #000;;
+.layer h3 {
+    width: 100%;
+    font-weight: 500;
+    color: #000;
     font-size: 26px;
     bottom: 0;
     left: 50%;
@@ -234,15 +248,12 @@ box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
     position: absolute;
     opacity: 0;
     transition: 0.5s;
-
 }
-.layer:hover h3{
-    bottom : 49%;
+
+.layer:hover h3 {
+    bottom: 49%;
     opacity: 1;
-
-
 }
-
 /*facilities*/
 
 .facilities{
