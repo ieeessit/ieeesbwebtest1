@@ -157,6 +157,9 @@ p{
     justify-content: space-between;
 
 }
+img {
+    border-radius: 5px;
+}
 
 .course-col{
     flex-basis: 31%;
