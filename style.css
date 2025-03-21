@@ -211,7 +211,7 @@ box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
 }
 .campus-col img, .facilities-col img {
     width: 100%;      /* Ensures all images stretch to fill their container */
-    height: 90px;     /* Fixed height for uniform size */
+    height: 250px;     /* Fixed height for uniform size */
     object-fit: cover; /* Crops and scales images to maintain aspect ratio */
     border-radius: 6px; /* Maintains the desired rounded corners */
 }
