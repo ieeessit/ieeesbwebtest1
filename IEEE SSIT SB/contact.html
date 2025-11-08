@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - IEEE SSIT SB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/IEEE5.jpg" alt="IEEE SSIT SB Logo">
+            <span>IEEE SSIT SB</span>
+        </a>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <li><a href="report.html">Report</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Contact Us</h1>
+        </section>
+
+        <section class="section container">
+            <div class="contact-grid hidden">
+                <form class="contact-form">
+                    <h2>Get in Touch</h2>
+                    <p>Have a question or a suggestion? Drop us a message!</p>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Our Info</h3>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Address:</strong><br>
+                        Sri Siddhartha Institute of Technology, Tumkur, Karnataka 572105</p>
+                    <p><strong><i class="fas fa-envelope"></i> Email:</strong><br>
+                        ieee@ssit.edu.in</p>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.169123861214!2d77.1245009153549!3d13.340331090611417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02c6a0648f583%3A0x63364f9f74a80693!2sSri%20Siddhartha%20Institute%20of%20Technology%20(SSIT)!5e0!3m2!1sen!2sin!4v1678888888888" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="mailto:ieee@ssit.edu.in"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2025 IEEE SSIT SB. All Rights Reserved.</p>
+            <p class="credit">Website Developer: Rishi Ijjanthkar</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
