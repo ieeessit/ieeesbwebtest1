@@ -1,132 +1,60 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SSIT IEEE</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
-        <section class="gallery">
-            <nav>
-                
-                <div class="nav-links" id="navLinks">
-                    <i class="fa fa-circle-xmark" onclick="hideMenu()"></i>
-                    <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contactus.html">Contact</a></li>
-                        
-                    </ul>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - IEEE SSIT SB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="page-header">
+            <h1>Gallery</h1>
+        </section>
+
+        <section class="section container">
+            <div class="filter-buttons hidden">
+                <button class="btn active" data-filter="all">All</button>
+                <button class="btn" data-filter="workshop">Workshops</button>
+                <button class="btn" data-filter="ieee-day">IEEE Day</button>
+                <button class="btn" data-filter="techtalk">TechTalks</button>
                 </div>
-                <i class="fa fa-bars"onclick="showMenu()"></i>
-            </nav>
 
-            <div class="text-box">
-                <a href="#about" class="hero-btn">scroll down to explore</a>
-            </div>
-        
-        </section>
-
-    <!---our events-->
-
-
-<!-- campus-->
-
-
-
-        <section class="facilities">
-            <h1>MOCK PLACEMENT</h1>
-            <p>Placement initiative taken by us.</p>
-
-            <div class="row">
-                <div class="facilities-col">
-                    <img src="images/mockpl1.jpg">
-                    </div>
-                    <div class="facilities-col">
-                        <img src="images/mockpl2.jpg">
-                        </div>
-                        <div class="facilities-col">
-                            <img src="images/mock3.jpg">
-                            </div>
-              </div>
-
-        </section>
-        <section class="facilities">
-            <h1>SAAMARTHYA</h1>
-            <p>Biggest Tech-Event in SSIT.</p>
-
-            <div class="row">
-                <div class="facilities-col">
-                    <img src="images/samar1.jpg">
-                    </div>
-                    <div class="facilities-col">
-                        <img src="images/sama2.jpg">
-                        </div>
-                        <div class="facilities-col">
-                            <img src="images/sama3.jpg">
-                            </div>
-              </div>
-              <div class="row">
-                <div class="facilities-col">
-                    <img src="images/sama4.jpg">
-                    </div>
-                    <div class="facilities-col">
-                        <img src="images/sama5.jpg">
-                        </div>
-                        <div class="facilities-col">
-                            <img src="images/sama6.jpg">
-                            </div>
-              </div>
-
-        </section>
-        <section class="facilities">
-            <h1>IEEE DAY</h1>
-            <p>Celebration Of IEEE DAY</p>
-
-            <div class="row">
-                <div class="facilities-col">
-                    <img src="images/ieeeday1.jpg">
-                    </div>
-                    <div class="facilities-col">
-                        <img src="images/mockpl2.jpg">
-                        </div>
-                        <div class="facilities-col">
-                            <img src="images/mock3.jpg">
-                            </div>
-              </div>
-
-        </section>
-
-        <section class="cta">
-            <h1>Join us </h1>
-            <a href="contactus.html"class="hero-btn">Contact US</a>
-            <div class="icons">
-     <a href="https://www.instagram.com/ieeesb_ssit?igsh=MXFwMGRlc2c5OHN0aQ%3D%3D"><i class="fa fa-brands fa-instagram" style="color: #f50a22;"></i></a>
-                <a href="https://www.youtube.com/@ieeesbssit9423"><i class="fa fa-brands fa-youtube" style="color: #f50505;"></i></a>
-                <a href="https://www.linkedin.com/in/ieee-sb-ssit-a87876249/"><i class="fa fa-brands fa-linkedin"></i></a>
+            <div class="gallery-grid">
+                <div class="gallery-item hidden" data-category="workshop">
+                    <img src="https://via.placeholder.com/400x300.png?text=Workshop+1" alt="A hands-on workshop session.">
+                </div>
+                <div class="gallery-item hidden" data-category="ieee-day">
+                    <img src="https://via.placeholder.com/400x300.png?text=IEEE+Day+1" alt="Celebrating IEEE Day 2025.">
+                </div>
+                <div class="gallery-item hidden" data-category="techtalk">
+                    <img src="https://via.placeholder.com/400x300.png?text=TechTalk+1" alt="Guest speaker at our TechTalk.">
+                </div>
+                <div class="gallery-item hidden" data-category="workshop">
+                    <img src="https://via.placeholder.com/400x300.png?text=Workshop+2" alt="Students building IoT projects.">
+                </div>
+                <div class="gallery-item hidden" data-category="ieee-day">
+                    <img src="https://via.placeholder.com/400x300.png?text=IEEE+Day+2" alt="Group photo with the faculty.">
+                </div>
+                <div class="gallery-item hidden" data-category="workshop">
+                    <img src="https://via.placeholder.com/400x300.png?text=Workshop+3" alt="Final project demonstrations.">
+                </div>
             </div>
         </section>
+    </main>
 
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+        <div id="lightbox-caption"></div>
+    </div>
 
+    <div id="footer-placeholder"></div>
 
-        <!-----javascript code-->
-        <script>
-            var navLinks=document.getElementById("navLinks");
-            function showMenu(){
-                navLinks.style.right="0";
-            }
-            function hideMenu(){
-                navLinks.style.right="-300px";
-            }
-        </script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
