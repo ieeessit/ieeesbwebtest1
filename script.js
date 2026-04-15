@@ -37,7 +37,7 @@ function loadHeader(activePage) {
     const headerHTML = `
     <header class="navbar">
         <a href="index.html" class="logo">
-            <img src="images/IEEE5.jpg" alt="IEEE SSIT SB Logo">
+            <img src="images/SB.png" alt="IEEE SSIT SB Logo">
             <span>IEEE SSIT SB</span>
         </a>
         <div class="hamburger"><i class="fas fa-bars"></i></div>
