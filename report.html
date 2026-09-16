@@ -13,13 +13,21 @@
             margin: auto;
         }
         .report-list li {
-            background: var(--bg-grey);
-            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--quantum-border);
+            box-shadow: 0 6px 20px rgba(0, 51, 102, 0.06);
+            margin-bottom: 1.25rem;
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .report-list li:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-cyan);
         }
         .report-list a {
             font-weight: 600;

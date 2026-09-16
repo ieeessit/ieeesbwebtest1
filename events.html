@@ -13,16 +13,24 @@
             gap: 2rem;
         }
         .event-card {
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--quantum-border);
+            box-shadow: 0 8px 24px rgba(0, 51, 102, 0.08);
+            border-radius: 12px;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 16px 36px rgba(14, 165, 233, 0.18);
         }
         .event-card img {
             width: 100%;
             height: 240px;
             object-fit: contain;
-            background: #f4f6fa;
+            background: rgba(240, 248, 255, 0.6);
         }
         .event-card video {
             width: 100%;

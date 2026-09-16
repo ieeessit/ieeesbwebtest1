@@ -2,15 +2,20 @@
 /* --- Google Font Import --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 
-/* --- CSS Variables (Theme from your Logos) --- */
+/* --- CSS Variables (Quantum Light Blue & IEEE Blue Theme) --- */
 :root {
     --primary-blue: #003366; /* Dark IEEE Blue */
-    --secondary-blue: #4D91C6; /* Lighter blue from logo */
+    --secondary-blue: #0066b2; /* Lighter blue from logo */
+    --accent-cyan: #0ea5e9;    /* Quantum Cyan Glow */
+    --accent-light-blue: #7dd3fc; /* Light Quantum Blue */
     --accent-yellow: #FDB813;  /* Gold/Yellow from logo rays */
-    --text-dark: #333;
-    --text-light: #f4f4f4;
-    --bg-light: #ffffff;
-    --bg-grey: #f9f9f9;
+    --text-dark: #1e293b;
+    --text-muted: #475569;
+    --text-light: #f8fafc;
+    --bg-light: rgba(255, 255, 255, 0.88);
+    --bg-grey: rgba(240, 248, 255, 0.65);
+    --quantum-border: rgba(14, 165, 233, 0.22);
+    --quantum-glow: 0 8px 32px rgba(14, 165, 233, 0.12);
 }
 
 /* --- Global Reset & Base Styles --- */
@@ -28,6 +33,10 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
+    background: linear-gradient(135deg, #eaf4fb 0%, #f0f7fe 35%, #e1effa 70%, #d8ecf9 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .container {
@@ -35,6 +44,8 @@ body {
     margin: auto;
     padding: 0 2rem;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 h1, h2, h3 {
@@ -165,28 +176,59 @@ a {
 
 /* --- Page Header (for sub-pages) --- */
 .page-header {
-    background: var(--bg-grey);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(224, 242, 254, 0.7) 100%);
+    backdrop-filter: blur(12px);
     padding: 3rem 0;
     text-align: center;
-    border-bottom: 3px solid var(--accent-yellow);
+    border-bottom: 3px solid var(--accent-cyan);
+    box-shadow: 0 4px 20px rgba(0, 51, 102, 0.05);
 }
 
 .page-header h1 {
     color: var(--primary-blue);
+    letter-spacing: 0.5px;
 }
 
-/* --- Section Styling --- */
+/* --- Section Styling with Frosted Quantum Aesthetics --- */
 .section {
-    padding: 4rem 0;
+    padding: 4.5rem 0;
+    position: relative;
 }
 
 .section-grey {
-    background: var(--bg-grey);
+    background: rgba(235, 245, 253, 0.6);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(14, 165, 233, 0.12);
+    border-bottom: 1px solid rgba(14, 165, 233, 0.12);
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--primary-blue));
+    border-radius: 2px;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 0.5rem;
 }
 
 /* --- Home Page: Hero Section --- */
@@ -222,6 +264,7 @@ a {
     max-width: 620px;
     height: auto;
     object-fit: contain;
+    filter: drop-shadow(0 15px 35px rgba(0, 51, 102, 0.12));
 }
 
 /* --- Home Page: Featured Event Section --- */
@@ -236,9 +279,12 @@ a {
     width: 100%;
     max-height: 520px;
     object-fit: contain;
-    background: #f4f6fa;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--quantum-border);
+    border-radius: 12px;
     padding: 0.5rem;
+    box-shadow: var(--quantum-glow);
 }
 
 .feature-event-content h3 {
@@ -258,9 +304,12 @@ a {
     width: 100%;
     max-width: 1000px; /* Adjust as needed */
     margin-top: 2rem;
-    background: #f4f4f4;
-    padding: 1rem;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--quantum-border);
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
 }
 
 /* --- Team Page: Team Grid --- */
@@ -271,38 +320,366 @@ a {
 }
 
 .team-card {
-    background: var(--bg-light);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.06);
+    border-radius: 12px;
     overflow: hidden;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 16px 36px rgba(14, 165, 233, 0.18);
 }
 
 .team-card img {
     width: 100%;
-    height: 300px; 
+    height: 310px; 
     object-fit: cover;
     object-position: top center;
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover img {
+    transform: scale(1.03);
 }
 
 .team-card-content {
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 248, 255, 0.9) 100%);
+    border-top: 1px solid rgba(14, 165, 233, 0.1);
 }
 
 .team-card-content h3 {
     color: var(--primary-blue);
-    margin-bottom: 0.25rem;
+    font-size: 1.15rem;
+    margin-bottom: 0.3rem;
 }
 
 .team-card-content p {
     font-weight: 600;
+    font-size: 0.88rem;
     color: var(--secondary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Faculty Leadership (Stationary / Non-scrolling Top Row) --- */
+.faculty-leadership-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.6rem 0.3rem 1.4rem;
+    margin: 1.5rem 0 2.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(14, 165, 233, 0.45) rgba(0, 51, 102, 0.05);
+}
+
+.faculty-leadership-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.faculty-leadership-wrapper::-webkit-scrollbar-track {
+    background: rgba(0, 51, 102, 0.05);
+    border-radius: 6px;
+}
+
+.faculty-leadership-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(14, 165, 233, 0.4);
+    border-radius: 6px;
+}
+
+.faculty-leadership-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-cyan);
+}
+
+.faculty-leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1150px;
+    margin: 0 auto;
+    min-width: 960px; /* Ensures all 4 cards stay strictly in the same line on smaller/phone screens */
+}
+
+@media (min-width: 1080px) {
+    .faculty-leadership-grid {
+        min-width: 0;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .faculty-leadership-grid {
+        min-width: 860px;
+        gap: 1rem;
+    }
+    .faculty-leadership-grid .team-card-content h3 {
+        font-size: 1.02rem;
+    }
+    .faculty-leadership-grid .leadership-card .role-badge {
+        font-size: 0.76rem;
+        padding: 0.2rem 0.6rem;
+    }
+    .faculty-leadership-wrapper {
+        padding-bottom: 1rem;
+        margin: 1rem 0 2rem;
+    }
+}
+
+.leadership-card {
+    border: 2px solid rgba(14, 165, 233, 0.35);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(230, 244, 254, 0.9) 100%);
+    box-shadow: 0 12px 30px rgba(0, 51, 102, 0.1);
+}
+
+.leadership-card:hover {
+    border-color: #0284c7;
+    box-shadow: 0 18px 40px rgba(14, 165, 233, 0.25);
+}
+
+.leadership-card .role-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.08), rgba(14, 165, 233, 0.16));
+    color: var(--primary-blue);
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    margin-top: 0.2rem;
+}
+
+.subsection-title {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 1.4rem;
+    margin: 2rem 0 1.5rem;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+/* --- Faculty ExeCom Auto-Scrolling Marquee (Slow & Smooth) --- */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 1.5rem 0 2.5rem;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(235, 245, 253, 0.95), transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(235, 245, 253, 0.95), transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: marqueeScroll 85s linear infinite; /* Slowed down to 85s for graceful viewing */
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-track .team-card {
+    flex: 0 0 260px;
+    width: 260px;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- Student Branch Functional & Operations Teams Table & Cards --- */
+.functional-teams-section {
+    padding: 4.5rem 0;
+}
+
+.functional-table-container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--quantum-border);
+    border-radius: 14px;
+    box-shadow: 0 12px 36px rgba(0, 51, 102, 0.08);
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.functional-teams-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.functional-teams-table thead {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #004d80 100%);
+    color: #ffffff;
+}
+
+.functional-teams-table th {
+    padding: 1.1rem 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--accent-cyan);
+}
+
+.functional-teams-table tbody tr {
+    border-bottom: 1px solid rgba(14, 165, 233, 0.12);
+    transition: background 0.25s ease;
+}
+
+.functional-teams-table tbody tr:hover {
+    background: rgba(224, 242, 254, 0.5);
+}
+
+.functional-teams-table td {
+    padding: 1rem 1.4rem;
+    vertical-align: middle;
+}
+
+.team-idx {
+    font-weight: 700;
+    color: var(--secondary-blue);
+    text-align: center;
+    width: 50px;
+}
+
+.team-name {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge-head {
+    background: rgba(14, 165, 233, 0.12);
+    color: #0369a1;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.badge-cohead {
+    background: rgba(253, 184, 19, 0.14);
+    color: #92400e;
+    border: 1px solid rgba(253, 184, 19, 0.35);
+}
+
+.team-members {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Quantum Background Animation Overlay --- */
+#quantum-bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.quantum-ambient-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.quantum-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    pointer-events: none;
+    animation: quantumDrift 24s ease-in-out infinite alternate;
+}
+
+.quantum-orb-1 {
+    width: 550px;
+    height: 550px;
+    top: -100px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(125, 211, 252, 0.6) 0%, rgba(14, 165, 233, 0.15) 70%, transparent 100%);
+    animation-duration: 22s;
+}
+
+.quantum-orb-2 {
+    width: 600px;
+    height: 600px;
+    bottom: -150px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(186, 230, 253, 0.7) 0%, rgba(56, 189, 248, 0.2) 70%, transparent 100%);
+    animation-duration: 28s;
+    animation-delay: -5s;
+}
+
+.quantum-orb-3 {
+    width: 450px;
+    height: 450px;
+    top: 45%;
+    left: 55%;
+    background: radial-gradient(circle, rgba(224, 242, 254, 0.8) 0%, rgba(14, 165, 233, 0.12) 70%, transparent 100%);
+    animation-duration: 26s;
+    animation-delay: -10s;
+}
+
+@keyframes quantumDrift {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translate(60px, 40px) scale(1.1) rotate(45deg);
+    }
+    100% {
+        transform: translate(-40px, 70px) scale(0.95) rotate(90deg);
+    }
 }
 
 /* --- Gallery Page: Gallery Grid --- */
@@ -334,44 +711,72 @@ a {
     gap: 3rem;
 }
 
+.contact-form {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--quantum-border);
+    box-shadow: 0 10px 32px rgba(0, 51, 102, 0.08);
+}
+
 .contact-form .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .contact-form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: var(--primary-blue);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 0.85rem;
+    border: 1.5px solid rgba(14, 165, 233, 0.25);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.18);
+    background: #ffffff;
 }
 
 .contact-info {
-    background: var(--bg-grey);
-    padding: 2rem;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--quantum-border);
+    box-shadow: 0 10px 32px rgba(0, 51, 102, 0.08);
 }
 
 .contact-info h3 {
     color: var(--primary-blue);
+    margin-bottom: 1.2rem;
 }
 
 .contact-info p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-dark);
 }
 
 .map-container {
     margin-top: 1.5rem;
     width: 100%;
     height: 250px;
-    background: #e0e0e0; /* Placeholder */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--quantum-border);
 }
 
 .map-container iframe {
@@ -465,16 +870,42 @@ a {
 .filter-buttons .btn.active {
     background: var(--primary-blue);
     color: var(--text-light);
+    border-color: var(--accent-cyan);
 }
 
-/* --- Gallery Item Styling --- */
+/* --- Gallery Grid & Items Styling --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+}
+
 .gallery-item {
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--quantum-border);
+    box-shadow: 0 6px 24px rgba(0, 51, 102, 0.06);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 12px 32px rgba(14, 165, 233, 0.22);
 }
 
 .gallery-item img {
     display: block; /* Fixes tiny gap below image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
 }
 
 /* New class for filtering */
